@@ -1,2 +1,2 @@
-<a href="/send">Send file</a>
-<a href="/receive">Receive a file</a>
+<a href="/QRCodeFTP/send">Send file</a>
+<a href="/QRCodeFTP/receive">Receive a file</a>
