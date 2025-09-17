@@ -1,13 +1,27 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
+    import { BrowserQRCodeReader } from "@zxing/browser";
+
+    const reader = new BrowserQRCodeReader(new Map(), {
+        delayBetweenScanSuccess: 0,
+        delayBetweenScanAttempts: 0,
+    });
+
     let stream: HTMLVideoElement;
 
-    $effect(() => {
-        navigator.mediaDevices
-            .getUserMedia({
+    onMount(async () => {
+        reader.decodeFromConstraints(
+            {
                 video: true,
-            })
-            .then((value) => (stream.srcObject = value))
-            .then(() => stream.play());
+            },
+            stream,
+            (result, error, controls) => {
+                if (result) {
+                    console.log(result.getText());
+                }
+            },
+        );
     });
 </script>
 
