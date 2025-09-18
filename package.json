@@ -22,6 +22,8 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"@zxing/browser": "^0.1.5"
+		"@tailwindcss/vite": "^4.1.13",
+		"@zxing/browser": "^0.1.5",
+		"tailwindcss": "^4.1.13"
 	}
 }
